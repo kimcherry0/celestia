@@ -1,0 +1,70 @@
+/* ===== CEL-ARCHIVE PUBLIC ACCESS NODE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #07090a; color: #a8e6b6; font-family: Consolas, 'Courier New', '맑은 고딕', 'Malgun Gothic', monospace; font-size: 13px; line-height: 1.9; padding: 62px 20px 74px; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .28) 0, rgba(0, 0, 0, .28) 1px, transparent 1px, transparent 3px); z-index: 999; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, .5) 100%); z-index: 998; }
+a { color: #7fd0ff; }
+a:hover { background: #10241a; }
+
+/* --- 시스템 바 --- */
+#sysbar { position: fixed; top: 0; left: 0; right: 0; background: #0a0f0c; border-bottom: 1px solid #2c4a36; padding: 9px 18px; font-size: 12px; z-index: 1000; display: flex; gap: 26px; align-items: center; }
+#sysbar .node { color: #ffd27a; letter-spacing: 1px; }
+#sysbar .warn { color: #ff6b6b; animation: blink 1.3s steps(2) infinite; }
+#sysbar #sys-cd { margin-left: auto; color: #ff9d9d; letter-spacing: 1px; }
+@keyframes blink { 50% { opacity: .12; } }
+#sysfoot { position: fixed; bottom: 0; left: 0; right: 0; background: #0a0f0c; border-top: 1px solid #2c4a36; padding: 8px 18px; font-size: 11px; color: #5f8a6c; z-index: 1000; }
+#sysfoot a { color: #8fc7a0; }
+
+/* --- 문서 --- */
+.doc { max-width: 840px; margin: 0 auto; }
+.doc h1 { color: #d8ffd8; font-size: 21px; margin: 16px 0 4px; text-shadow: 1px 0 rgba(255, 0, 80, .3), -1px 0 rgba(0, 200, 255, .3); font-weight: bold; }
+.doc h2 { color: #ffd27a; font-size: 15px; margin: 32px 0 12px; border-bottom: 1px dashed #2c4a36; padding-bottom: 7px; }
+.doc-no { color: #6fa87e; font-size: 12px; letter-spacing: 2px; margin-top: 8px; }
+.doc p { margin-bottom: 14px; }
+.doc ol, .doc ul { margin: 0 0 14px 24px; }
+.doc ol li, .doc ul li { margin-bottom: 4px; }
+.doc strong { color: #eaffe2; }
+hr { border: 0; border-top: 1px dashed #23402e; margin: 30px 0; }
+
+.meta { width: 100%; border-collapse: collapse; margin: 18px 0 26px; font-size: 12px; }
+.meta th { color: #ffd27a; text-align: left; font-weight: normal; border: 1px solid #23402e; background: #0c1410; padding: 6px 11px; width: 140px; white-space: nowrap; }
+.meta td { border: 1px solid #23402e; padding: 6px 11px; color: #bfe9c8; }
+
+blockquote { border-left: 2px solid #ff6b6b; color: #ff9d9d; padding: 4px 0 4px 15px; margin: 16px 0; }
+blockquote p { margin-bottom: 6px; }
+.sysquote { border-left: 2px solid #3f6b4d; color: #8fc7a0; padding: 4px 0 4px 15px; margin: 16px 0; font-size: 12px; }
+.sysquote p { margin-bottom: 5px; }
+.warnbox { border: 1px dashed #ff6b6b; color: #ff9d9d; padding: 13px 17px; margin: 20px 0; }
+.warnbox strong { color: #ffb8b8; }
+
+/* --- 문서 목록 --- */
+.filelist { list-style: none; margin: 22px 0 !important; }
+.filelist li { border: 1px solid #23402e; background: #0b120e; margin-bottom: 11px; }
+.filelist a { display: block; padding: 13px 17px; color: #a8e6b6; text-decoration: none; }
+.filelist a:hover { background: #10241a; }
+.filelist .no { color: #6fa87e; font-size: 11px; letter-spacing: 2px; display: block; }
+.filelist .tt { font-size: 14px; color: #d8ffd8; }
+.filelist .st { float: right; font-size: 11px; color: #ff9d9d; margin-top: 3px; }
+.filelist li.dossier-link { border-color: #5c2330; background: #160b0e; }
+.filelist li.dossier-link .tt { color: #ffb3c0; }
+.filelist li.dossier-link .no { color: #b06a78; }
+.filelist li.dossier-link a:hover { background: #241016; }
+
+/* --- 조사파일 --- */
+.faction { margin: 36px 0 6px; color: #ffd27a; font-size: 14px; border-bottom: 1px dashed #2c4a36; padding-bottom: 7px; letter-spacing: 1px; }
+.dslist { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0 !important; }
+.dslist a { display: flex; gap: 13px; border: 1px solid #23402e; background: #0b120e; padding: 10px; text-decoration: none; color: #a8e6b6; align-items: center; }
+.dslist a:hover { background: #10241a; }
+.dslist img { width: 52px; height: 68px; object-fit: cover; object-position: top; filter: grayscale(.5) contrast(1.05); border: 1px solid #2c4a36; flex: none; }
+.dslist .nm { color: #d8ffd8; font-size: 14px; display: block; }
+.dslist .gr { font-size: 11px; color: #ffd27a; display: block; }
+.dslist .rk { font-size: 11px; color: #6fa87e; display: block; }
+
+/* --- 증명사진 --- */
+.idphoto { float: right; width: 152px; margin: 6px 0 16px 22px; border: 1px solid #3a5c46; background: #0c1410; padding: 6px; text-align: center; }
+.idphoto img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; filter: grayscale(.45) contrast(1.08) brightness(.92); display: block; }
+.idphoto span { display: block; font-size: 11px; color: #8fc7a0; padding-top: 6px; }
+.clear { clear: both; }
+
+.btn-back { display: inline-block; border: 1px solid #2c4a36; padding: 6px 17px; margin: 24px 0 4px; color: #a8e6b6 !important; font-size: 12px; text-decoration: none; }
+.btn-back:hover { background: #10241a; }
